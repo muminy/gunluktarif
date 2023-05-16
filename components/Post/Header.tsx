@@ -8,6 +8,7 @@ import Container from "../Container"
 import Permalink from "../Permalink"
 import Repeater from "../Repeater"
 import Tag from "../Tag"
+import Share from "./Share"
 
 export interface IPostHeaderProps {
   title: string
@@ -32,32 +33,7 @@ export default function PostHeader({
         render={(item) => <Tag slug={item.slug} title={item.name} />}
       />
 
-      <Repeater
-        renderHeader={
-          <h6 className="text-white font-semibold mb-2">Paylaş</h6>
-        }
-        className="flex items-center gap-3 flex-wrap"
-        data={shareList}
-        render={(item) => (
-          <Permalink
-            className={cn(
-              "bg-secondary rounded-xl text-center fill-white",
-              "py-2.5 px-5 hover-ring center-center space-x-3"
-            )}
-            href={"/"}
-          >
-            <svg
-              width={18}
-              height={18}
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-            >
-              <path d={item.path} />
-            </svg>
-            <span>{item.title}</span>
-          </Permalink>
-        )}
-      />
+      <Share title={title} />
     </Container>
   )
 }

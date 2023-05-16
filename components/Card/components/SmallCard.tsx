@@ -18,12 +18,12 @@ export default function SmallCard({
       href={`/tarif/${slug}`}
       className={cn(
         "w-full bg-secondary rounded-2xl",
-        "overflow-hidden flex p-4 space-x-6 items-center",
+        "overflow-hidden flex md:flex-row flex-col p-4 md:space-x-6 items-center",
         "hover-ring"
       )}
     >
       <img
-        className="h-24 w-24 object-cover rounded-xl"
+        className="h-24 md:w-24 w-full mb-4 md:mb-0 object-cover rounded-xl"
         src={image.sourceUrl}
         alt={image.title}
       />

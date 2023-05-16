@@ -3,7 +3,7 @@ import type { Metadata } from "next"
 
 const seo = {
   image: `${domain}${defaultImage}`,
-  title: "Yemek tarifleri",
+  title: "Yemek tarifleri | GünlükTarif.com",
   description: "Günlük Yemek tarifleri",
   twitter: {
     site: "@gunluktarif",

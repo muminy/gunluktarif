@@ -17,7 +17,7 @@ export async function generateMetadata({
   const post = await getPostDetail({ slug: params.slug })
 
   return generateSeo({
-    title: post.title,
+    title: `${post.title} | Günlük Yemek Tarifleri.`,
     description: post.excerpt,
     url: `${domain}/${post.slug}`,
     image: post.image.sourceUrl,
@@ -37,7 +37,7 @@ export default async function Page({ params }: IRecipePageProps) {
 
       <Container className="mb-10">
         <img
-          className="w-full rounded-xl"
+          className="w-full rounded-xl max-h-[500px] object-cover"
           src={post.image.sourceUrl}
           title={post.image.title}
         />

@@ -136,8 +136,8 @@ export default function PrivacyPolicy() {
         kabul edip etmemek hususunda tamamen özgürsünüz. Siteyi
         kullanmaya devam ettiğiniz takdirde kabul etmiş olduğunuz
         tarafımızca varsayılacak olup, daha ayrıntılı bilgi için
-        bizimle help@codejs.dev e-mail adresi üzerinden iletişime
-        geçmekten lütfen çekinmeyiniz.
+        bizimle <b>puuwto@gmail.com</b> e-mail adresi üzerinden
+        iletişime geçmekten lütfen çekinmeyiniz.
       </p>
     </Container>
   )

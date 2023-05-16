@@ -16,7 +16,7 @@ export default function Footer() {
               title: "Gizlilik Politikası",
               to: "/gizlilik-politikasi",
             },
-            { title: "İletişim", to: "/" },
+            // { title: "İletişim", to: "/" },
           ]}
           as="ul"
           className="flex lg:flex-row flex-col lg:gap-4 gap-2 items-center"
