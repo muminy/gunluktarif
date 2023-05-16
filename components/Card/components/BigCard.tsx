@@ -6,41 +6,50 @@ import {
   AvatarFallback,
   AvatarImage,
 } from "#/components/ui/avatar"
+import { truncate } from "#/helper/string"
 import { cn } from "#/lib/utils"
+import { ICardProps } from ".."
 
-export default function BigCard() {
+export interface IBigCardProps extends Omit<ICardProps, "type"> {}
+export default function BigCard({
+  author,
+  excerpt,
+  image,
+  title,
+  slug,
+}: IBigCardProps) {
   return (
     <Permalink
-      href={"/tarif/asd"}
+      href={`/tarif/${slug}`}
       className={cn(
         "w-full bg-secondary rounded-xl",
         "overflow-hidden",
-        "hover-ring"
+        "hover-ring flex flex-col"
       )}
     >
       <img
         className="h-[240px] w-full object-cover"
-        src="https://gunluktarif.codejs.dev/wp-content/uploads/2023/02/dereotlu-pogaca-tarifi.jpg"
+        src={image.sourceUrl}
+        alt={image.title}
       />
-      <div className="px-8 py-8">
-        <h2 className="text-2xl text-white font-semibold mb-3">
-          Free Stock Videos & Photos
-        </h2>
-        <p className="mb-5">
-          We know that time is a valuable investment, so we’ve
-          provided you with a free stock video and photo library.
-        </p>
+      <div className="px-8 py-8 flex flex-col justify-between h-full">
+        <div>
+          <h2 className="text-2xl text-white font-semibold mb-3">
+            {title}
+          </h2>
+          <p className="mb-5">{truncate(excerpt, 100)}</p>
+        </div>
 
-        <div className="flex items-center space-x-4">
+        <div className="flex items-center space-x-4 mt-auto">
           <Avatar className="w-10 h-10 p-0.5 border-2 rounded-full">
             <AvatarImage
               className="rounded-full"
-              src="https://a.storyblok.com/f/198185/1472x1472/3eb1893214/pedro-brandao.png/m/100x100/"
+              src={author.avatar.url}
             />
             <AvatarFallback>ED</AvatarFallback>
           </Avatar>
 
-          <span className="font-semibold">Eray Durmuş</span>
+          <span className="font-semibold">{author.name}</span>
         </div>
       </div>
     </Permalink>

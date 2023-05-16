@@ -9,7 +9,7 @@ export default function Layout({ children }: IContainerProps) {
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
-      <main className="py-28 h-full">{children}</main>
+      <main className="pt-28 h-full">{children}</main>
       <Footer />
     </div>
   )

@@ -1,16 +1,20 @@
 import { cn } from "#/lib/utils"
 import Permalink from "../Permalink"
 
-export default function Tag() {
+export interface ITagProps {
+  title: string
+  slug: string
+}
+export default function Tag({ title, slug }: ITagProps) {
   return (
     <Permalink
       className={cn(
         "px-5 border py-2.5 rounded-xl flex space-x-2",
         "hover-ring text-sm text-white fill-white"
       )}
-      href={"/kategori/asd"}
+      href={`/kategori/${slug}`}
     >
-      <span>Kategori</span>
+      <span>{title}</span>
       <svg
         width={20}
         height={20}

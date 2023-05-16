@@ -11,8 +11,11 @@ export default function Footer() {
 
         <Repeater
           data={[
-            { title: "Hakkımızda", to: "/" },
-            { title: "Gizlilik Politikası", to: "/" },
+            { title: "Hakkımızda", to: "/hakkimizda" },
+            {
+              title: "Gizlilik Politikası",
+              to: "/gizlilik-politikasi",
+            },
             { title: "İletişim", to: "/" },
           ]}
           as="ul"

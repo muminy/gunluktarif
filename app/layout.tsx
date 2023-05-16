@@ -7,17 +7,16 @@ import Sheet, { sheetRef } from "#/components/Sheet"
 import { SiteProvider } from "#/context/Site"
 import { Inter } from "next/font/google"
 import { use } from "react"
-import { getCategories } from "#/service/category"
+import { categoryFetch } from "#/service/category"
 
 const inter = Inter({ subsets: ["latin"] })
 
-export default async function RootLayout({
+export default function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
-  const categories = await getCategories()
-
+  const categories = use(categoryFetch)
   return (
     <html lang="en" className="dark">
       <body className={`${inter.className} h-screen`}>

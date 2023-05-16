@@ -12,7 +12,6 @@ import { SheetListType, SheetRefType, SheetSizes } from "."
 import Modals from "./pages"
 import { cn } from "#/lib/utils"
 import { cva } from "class-variance-authority"
-import router from "next/router"
 
 const Sheet = forwardRef<SheetRefType>(({}, ref) => {
   const modalRef = useRef<SheetListType>()
@@ -26,11 +25,6 @@ const Sheet = forwardRef<SheetRefType>(({}, ref) => {
     const SheetContent = Modals[modalRef.current]
     return <SheetContent />
   }
-
-  useEffect(() => {
-    router.events.on("routeChangeComplete", (u) => console.log(u))
-  }, [])
-
   useEffect(() => {
     document.body.style.overflow = showModal ? "hidden" : "auto"
   }, [showModal])

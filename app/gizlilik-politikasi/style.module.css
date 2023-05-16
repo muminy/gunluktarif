@@ -1,0 +1,17 @@
+
+
+.content h1 {
+    @apply text-6xl text-white font-black;
+}
+
+.content :is(h2,h3,h4,h5,h6) {
+    @apply text-3xl mb-4 text-white font-semibold;
+}
+
+.content p {
+    @apply text-lg mb-8 text-white/60;
+}
+
+.content ul {
+    @apply list-disc text-lg mb-5 text-white pl-5;
+}
