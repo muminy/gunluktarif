@@ -8,6 +8,7 @@ export async function generateMetadata() {
   return generateSeo({})
 }
 
+export const revalidate = 60
 export default async function Home() {
   const recipients = await getAllRecipient()
   const best = recipients.sort(

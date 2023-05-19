@@ -2,9 +2,10 @@ import Card, { CardTypes } from "#/components/Card"
 import Container from "#/components/Container"
 import Repeater from "#/components/Repeater"
 import { domain } from "#/constants/site"
-import { generateSeo } from "#/helper/metadata"
+import { NotFoundMetaData, generateSeo } from "#/helper/metadata"
 import { getCategory } from "#/service/category"
 import { Metadata } from "next"
+import { notFound } from "next/navigation"
 
 export interface ICategoryPageProps {
   params: {
@@ -17,6 +18,10 @@ export async function generateMetadata({
 }: ICategoryPageProps): Promise<Metadata> {
   const category = await getCategory({ slug: params.slug })
 
+  if (!category) {
+    return NotFoundMetaData
+  }
+
   return generateSeo({
     title: `${category.name} | Günlüktarif.com`,
     description: `${category.name} Kategorisine ait leziz yemek tarifleri`,
@@ -24,13 +29,18 @@ export async function generateMetadata({
   })
 }
 
+export const revalidate = 60
 export default async function CategoryPage({
   params,
 }: ICategoryPageProps) {
   const category = await getCategory({ slug: params.slug })
 
+  if (!category) {
+    notFound()
+  }
+
   return (
-    <Container size="sm" className="pt-5">
+    <Container size="sm" className="pt-5 pb-10">
       <Repeater
         data={category.posts}
         renderHeader={
@@ -41,6 +51,11 @@ export default async function CategoryPage({
             <p className="text-white/40">
               {category.name} Kategorisine ait son tarifler.
             </p>
+          </div>
+        }
+        renderEmpty={
+          <div className="bg-secondary py-14 text-center px-4 rounded-xl">
+            Bu kategoriye ait tarif bulamadık
           </div>
         }
         className="grid grid-cols-1 gap-4"

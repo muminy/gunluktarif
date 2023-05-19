@@ -35,20 +35,20 @@ export interface ICategoryVars {
   slug: string
 }
 export async function getCategory(props: ICategoryVars) {
-  try {
-    const response: ApolloQueryResult<CategoryResponse> =
-      await client.query({
-        query: GET_CATEGORY,
-        variables: { slug: props.slug },
-      })
+  const response: ApolloQueryResult<CategoryResponse> =
+    await client.query({
+      query: GET_CATEGORY,
+      variables: { slug: props.slug },
+    })
 
-    const posts = response.data.category.posts.nodes.map(toPost)
-    return {
-      ...response.data.category,
-      posts,
-    }
-  } catch (e) {
-    notFound()
+  if (!response.data.category) {
+    return null
+  }
+
+  const posts = response.data.category.posts.nodes.map(toPost)
+  return {
+    ...response.data.category,
+    posts,
   }
 }
 

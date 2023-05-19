@@ -5,7 +5,7 @@ import Repeater from "../Repeater"
 
 export default function Footer() {
   return (
-    <footer className="py-10 mt-auto border-t">
+    <footer className="py-10 mt-auto border-t bg-background">
       <Container className="flex lg:flex-row flex-col items-center justify-between">
         <Logo className="lg:mb-0 mb-4" size={28} />
 

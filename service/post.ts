@@ -29,16 +29,17 @@ interface IPostDetailProps {
   slug: string
 }
 export async function getPostDetail(props: IPostDetailProps) {
-  try {
-    const response: ApolloQueryResult<PostDetailResponse> =
-      await client.query({
-        query: GET_POST_BY_SLUG,
-        variables: {
-          slug: props.slug,
-        },
-      })
+  const response: ApolloQueryResult<PostDetailResponse> =
+    await client.query({
+      query: GET_POST_BY_SLUG,
+      variables: {
+        slug: props.slug,
+      },
+    })
+
+  if (response.data.post) {
     return toPost(response.data.post)
-  } catch (e) {
-    notFound()
+  } else {
+    return null
   }
 }

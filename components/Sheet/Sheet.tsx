@@ -12,11 +12,13 @@ import { SheetListType, SheetRefType, SheetSizes } from "."
 import Modals from "./pages"
 import { cn } from "#/lib/utils"
 import { cva } from "class-variance-authority"
+import { usePathname } from "next/navigation"
 
 const Sheet = forwardRef<SheetRefType>(({}, ref) => {
   const modalRef = useRef<SheetListType>()
   const modalSizeRef = useRef<SheetSizes>("sm")
   const [showModal, setShowModal] = useState(false)
+  const router = usePathname()
 
   const Modal = () => {
     if (!modalRef.current) {
@@ -28,6 +30,10 @@ const Sheet = forwardRef<SheetRefType>(({}, ref) => {
   useEffect(() => {
     document.body.style.overflow = showModal ? "hidden" : "auto"
   }, [showModal])
+
+  useEffect(() => {
+    setShowModal(false)
+  }, [router])
 
   const SheetDrawer = cva(
     "bg-background max-w-2xl w-full h-full z-40 rounded-xl",

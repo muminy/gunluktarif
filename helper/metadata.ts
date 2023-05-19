@@ -53,3 +53,11 @@ export async function generateSeo({
     ...props,
   }
 }
+
+export const NotFoundMetaData = {
+  title: "Bulamadık",
+  robots: {
+    follow: false,
+    index: false,
+  },
+}

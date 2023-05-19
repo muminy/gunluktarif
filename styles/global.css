@@ -5,7 +5,7 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
+    --background: #171717;
     --foreground: 222.2 47.4% 11.2%;
  
     --border: #eeeeee;
@@ -27,9 +27,8 @@
   * {
     @apply border-border
   }
-  body {
+  html, body {
     @apply bg-background text-foreground;
-    font-feature-settings: "rlig" 1, "calt" 1;
   }
 }
 

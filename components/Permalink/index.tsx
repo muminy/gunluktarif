@@ -10,5 +10,12 @@ export default function Permalink({
   className,
   ...props
 }: IPermalinkProps) {
-  return <Link href={href} className={cn(className)} {...props} />
+  return (
+    <Link
+      passHref={false}
+      href={href}
+      className={cn(className)}
+      {...props}
+    />
+  )
 }

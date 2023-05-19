@@ -1,9 +1,10 @@
 import Container from "#/components/Container"
 import { Author, Detail, Recipe, PostHeader } from "#/components/Post"
 import { domain } from "#/constants/site"
-import { generateSeo } from "#/helper/metadata"
+import { NotFoundMetaData, generateSeo } from "#/helper/metadata"
 import { getPostDetail } from "#/service/post"
 import type { Metadata } from "next"
+import { notFound } from "next/navigation"
 
 export interface IRecipePageProps {
   params: {
@@ -11,10 +12,12 @@ export interface IRecipePageProps {
   }
 }
 
-export async function generateMetadata({
-  params,
-}: IRecipePageProps): Promise<Metadata> {
+export async function generateMetadata({ params }: IRecipePageProps) {
   const post = await getPostDetail({ slug: params.slug })
+
+  if (!post) {
+    return NotFoundMetaData
+  }
 
   return generateSeo({
     title: `${post.title} | Günlük Yemek Tarifleri.`,
@@ -28,8 +31,13 @@ export async function generateMetadata({
   })
 }
 
+export const revalidate = 60
 export default async function Page({ params }: IRecipePageProps) {
   const post = await getPostDetail({ slug: params.slug })
+
+  if (!post) {
+    notFound()
+  }
 
   return (
     <div className="pt-10">
