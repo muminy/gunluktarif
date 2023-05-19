@@ -21,12 +21,14 @@ export default function Footer() {
           as="ul"
           className="flex lg:flex-row flex-col lg:gap-4 gap-2 items-center"
           render={(item) => (
-            <Permalink
-              className="link whitespace-nowrap"
-              href={item.to}
-            >
-              {item.title}
-            </Permalink>
+            <li>
+              <Permalink
+                className="link whitespace-nowrap"
+                href={item.to}
+              >
+                {item.title}
+              </Permalink>
+            </li>
           )}
         />
       </Container>

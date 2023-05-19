@@ -36,17 +36,30 @@ export function toPost({
   const ingredientsList = ingrads.split("-NEW-")
   const steplist = steps.split("-NEW-")
 
-  const ingredients = ingredientsList.filter(Boolean).map((item) => {
-    // split adde for name and value
-    // seperator ' - '
-    const itemList = item.split(" - ")
+  const ingredients = ingredientsList
+    .filter(Boolean)
+    .map<NameValue>((item) => {
+      // split adde for name and value
+      // seperator ' - '
 
-    if (itemList.length > 1) {
-      return { name: itemList[1], value: itemList[0] }
-    } else {
-      return { name: itemList[0] }
-    }
-  })
+      if (item.includes(":")) {
+        return {
+          name: item,
+          type: "header",
+        }
+      }
+      const itemList = item.split(" - ")
+
+      if (itemList.length > 1) {
+        return {
+          name: itemList[1],
+          value: itemList[0],
+          type: "ingredient",
+        }
+      } else {
+        return { name: itemList[0], type: "ingredient" }
+      }
+    })
 
   const stepsData = steplist.map((item) => item)
 

@@ -16,6 +16,7 @@ export type MenuType = {
 export type NameValue = {
   name: string
   value?: string | number
+  type?: "header" | "ingredient"
 }
 
 export type PostType = {

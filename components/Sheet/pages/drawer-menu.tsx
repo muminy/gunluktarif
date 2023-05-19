@@ -19,12 +19,14 @@ export default function DrawerMenu() {
         }
         className="gap-y-1 flex flex-col"
         render={(item) => (
-          <Permalink
-            className="font-medium text-lg hover:text-white"
-            href={`/kategori/${item.slug}`}
-          >
-            {item.name}
-          </Permalink>
+          <li>
+            <Permalink
+              className="font-medium text-lg hover:text-white"
+              href={`/kategori/${item.slug}`}
+            >
+              {item.name}
+            </Permalink>
+          </li>
         )}
         data={categories}
       />

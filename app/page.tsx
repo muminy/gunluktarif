@@ -8,12 +8,8 @@ export async function generateMetadata() {
   return generateSeo({})
 }
 
-export const revalidate = 60
 export default async function Home() {
-  const recipients = await getAllRecipient()
-  const best = recipients.sort(
-    (a, b) => b.commentCount - a.commentCount
-  )
+  const posts = await getAllRecipient()
 
   return (
     <div className="w-full pb-10">
@@ -24,18 +20,19 @@ export default async function Home() {
         </h1>
 
         <Repeater
-          data={best.slice(0, 3)}
+          data={posts.slice(0, 6)}
           className="grid lg:grid-cols-3 grid-cols-1 gap-5 mb-14"
           render={(item) => <Card {...item} type={CardTypes.Big} />}
         />
 
         <Repeater
-          data={recipients}
           renderHeader={
-            <h2 className="mb-6 lg:text-7xl text-4xl font-extrabold text-white">
-              En Yeni <br /> Tariflerimiz
-            </h2>
+            <h1 className="lg:text-7xl text-4xl font-bold text-white mb-10 transition-all duration-500 ease-motion">
+              <span className="block mb-2">Diğer Leziz</span>
+              <span className="block text-white/70">Tarifler</span>
+            </h1>
           }
+          data={posts.slice(6, posts.length)}
           className="grid lg:grid-cols-2 grid-cols-1 gap-5"
           render={(item) => <Card {...item} type={CardTypes.Small} />}
         />
@@ -43,3 +40,6 @@ export default async function Home() {
     </div>
   )
 }
+
+// export const fetchCache = "force-no-store"
+export const revalidate = 60

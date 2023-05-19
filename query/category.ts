@@ -20,7 +20,7 @@ const FRAGMENTS_CATEGORIES = gql`
 export const QUERY_CATEGORIES = gql`
   ${FRAGMENTS_CATEGORIES}
   query Categories {
-    categories {
+    categories(first: 100) {
       nodes {
         ...CategoryFields
       }

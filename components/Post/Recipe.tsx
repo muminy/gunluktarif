@@ -20,8 +20,17 @@ export function Step({ step, text }: StepProps) {
 }
 
 export interface IRecipeListProps extends NameValue {}
-export function RecipeList({ name, value }: IRecipeListProps) {
+export function RecipeList({ name, value, type }: IRecipeListProps) {
   const [isSelected, setSelected] = useState(false)
+
+  if (type === "header") {
+    return (
+      <h4 className="text-2xl text-white font-bold mb-4 mt-8">
+        {name}
+      </h4>
+    )
+  }
+
   return (
     <button
       onClick={() => setSelected(!isSelected)}

@@ -1,9 +1,14 @@
 import Container from "#/components/Container"
-import { Author, Detail, Recipe, PostHeader } from "#/components/Post"
+import {
+  Author,
+  Detail,
+  Recipe,
+  PostHeader,
+  Share,
+} from "#/components/Post"
 import { domain } from "#/constants/site"
 import { NotFoundMetaData, generateSeo } from "#/helper/metadata"
 import { getPostDetail } from "#/service/post"
-import type { Metadata } from "next"
 import { notFound } from "next/navigation"
 
 export interface IRecipePageProps {
@@ -53,6 +58,7 @@ export default async function Page({ params }: IRecipePageProps) {
 
       <Container size="sm" className="mb-10">
         <Detail content={post.content} />
+        <Share title={post.title} />
       </Container>
 
       <Recipe ingredients={post.ingredients} steps={post.steps} />

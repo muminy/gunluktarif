@@ -1,0 +1,25 @@
+
+
+.recipe p {
+    @apply mb-8 font-medium text-lg
+}
+
+.recipe :is(b, strong) {
+    @apply text-yellow-400
+}
+
+.recipe :is(h1, h2, h3, h4, h5, h6) {
+    @apply mb-4 text-white font-black
+}
+
+.recipe :is(h1, h2) {
+    @apply text-4xl
+}
+
+.recipe ul {
+    @apply list-disc pl-5 mb-10
+}
+
+.recipe ul li {
+    @apply text-white text-lg
+}
