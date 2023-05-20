@@ -21,6 +21,7 @@ export default async function Home() {
 
         <Repeater
           data={posts.slice(0, 6)}
+          as="section"
           className="grid lg:grid-cols-3 grid-cols-1 gap-5 mb-14"
           render={(item) => <Card {...item} type={CardTypes.Big} />}
         />
@@ -32,6 +33,7 @@ export default async function Home() {
               <span className="block text-white/70">Tarifler</span>
             </h1>
           }
+          as="section"
           data={posts.slice(6, posts.length)}
           className="grid lg:grid-cols-2 grid-cols-1 gap-5"
           render={(item) => <Card {...item} type={CardTypes.Small} />}
@@ -41,5 +43,5 @@ export default async function Home() {
   )
 }
 
-// export const fetchCache = "force-no-store"
+export const fetchCache = "force-no-store"
 export const revalidate = 60

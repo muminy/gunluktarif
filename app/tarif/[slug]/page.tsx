@@ -45,7 +45,7 @@ export default async function Page({ params }: IRecipePageProps) {
   }
 
   return (
-    <div className="pt-10">
+    <article className="pt-10">
       <PostHeader {...post} />
 
       <Container className="mb-10">
@@ -63,6 +63,6 @@ export default async function Page({ params }: IRecipePageProps) {
 
       <Recipe ingredients={post.ingredients} steps={post.steps} />
       <Author author={post.author} />
-    </div>
+    </article>
   )
 }

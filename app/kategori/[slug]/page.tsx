@@ -53,6 +53,7 @@ export default async function CategoryPage({
             </p>
           </div>
         }
+        as="section"
         renderEmpty={
           <div className="bg-secondary py-14 text-center px-4 rounded-xl">
             Bu kategoriye ait tarif bulamadık
