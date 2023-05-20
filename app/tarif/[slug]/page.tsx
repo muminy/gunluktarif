@@ -6,9 +6,10 @@ import {
   PostHeader,
   Share,
 } from "#/components/Post"
-import { domain } from "#/constants/site"
+import { defaultImage, domain } from "#/constants/site"
 import { NotFoundMetaData, generateSeo } from "#/helper/metadata"
 import { getPostDetail } from "#/service/post"
+import Image from "next/image"
 import { notFound } from "next/navigation"
 
 export interface IRecipePageProps {
@@ -49,10 +50,16 @@ export default async function Page({ params }: IRecipePageProps) {
       <PostHeader {...post} />
 
       <Container className="mb-10">
-        <img
+        <Image
           className="w-full rounded-xl max-h-[500px] object-cover"
           src={post.image.sourceUrl}
           title={post.image.title}
+          alt={post.image.title}
+          width={700}
+          height={400}
+          blurDataURL={defaultImage}
+          loading="lazy"
+          placeholder="blur"
         />
       </Container>
 

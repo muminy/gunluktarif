@@ -8,7 +8,9 @@ import {
 } from "#/components/ui/avatar"
 import { truncate } from "#/helper/string"
 import { cn } from "#/lib/utils"
+import Image from "next/image"
 import { ICardProps } from ".."
+import { defaultImage } from "#/constants/site"
 
 export interface IBigCardProps extends Omit<ICardProps, "type"> {}
 export default function BigCard({
@@ -27,10 +29,15 @@ export default function BigCard({
         "hover-ring flex flex-col"
       )}
     >
-      <img
+      <Image
         className="h-[240px] w-full object-cover"
         src={image.sourceUrl}
         alt={image.title}
+        title={image.title}
+        width={300}
+        height={240}
+        placeholder="blur"
+        blurDataURL={defaultImage}
       />
       <div className="px-8 py-8 flex flex-col justify-between h-full">
         <div>

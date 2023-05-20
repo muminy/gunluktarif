@@ -3,11 +3,12 @@
 import Permalink from "#/components/Permalink"
 import { truncate } from "#/helper/string"
 import { cn } from "#/lib/utils"
+import Image from "next/image"
 import { ICardProps } from ".."
+import { defaultImage } from "#/constants/site"
 
 export interface ISmallCardProps extends Omit<ICardProps, "type"> {}
 export default function SmallCard({
-  author,
   image,
   title,
   excerpt,
@@ -22,15 +23,20 @@ export default function SmallCard({
         "hover-ring"
       )}
     >
-      <img
-        className="h-24 md:w-24 w-full mb-4 md:mb-0 object-cover rounded-xl"
+      <Image
+        className="lg:h-24 h-[140px] lg:min-w-[96px] md:w-24 w-full mb-4 md:mb-0 object-cover rounded-xl"
         src={image.sourceUrl}
+        title={image.title}
         alt={image.title}
+        width={100}
+        height={100}
+        placeholder="blur"
+        blurDataURL={defaultImage}
       />
 
       <div>
         <h2 className="font-semibold mb-3 text-white">{title}</h2>
-        <p className="font-medium text-sm text-white/30">
+        <p className="font-medium text-sm">
           {excerpt
             ? truncate(excerpt, 100)
             : "Tarif İçin İçeriğe Göz Atın"}

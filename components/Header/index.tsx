@@ -22,6 +22,7 @@ export default function Header() {
             onClick={() => {
               showSheet("drawer-menu", "sm")
             }}
+            aria-label="sheet-button"
             className="fill-white bg-secondary w-12 h-12 rounded-xl center-center"
           >
             <svg
