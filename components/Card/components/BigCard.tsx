@@ -50,6 +50,7 @@ export default function BigCard({
         <div className="flex items-center space-x-4 mt-auto">
           <Avatar className="w-10 h-10 p-0.5 border-2 rounded-full">
             <AvatarImage
+              alt={author.name}
               className="rounded-full"
               src={author.avatar.url}
             />

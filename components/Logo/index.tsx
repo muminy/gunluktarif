@@ -12,7 +12,11 @@ export default function Logo({
   className,
 }: ILogoProps) {
   return (
-    <Permalink href={"/"} className={cn("inline-flex", className)}>
+    <Permalink
+      label="Günlüktarif.com Logo"
+      href={"/"}
+      className={cn("inline-flex", className)}
+    >
       <svg
         width={size * 4.8}
         height={size}
