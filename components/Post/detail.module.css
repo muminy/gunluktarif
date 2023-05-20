@@ -33,6 +33,9 @@
     @apply mb-10
 }
 
+.recipe iframe {
+    width: 100%;
+}
 .recipe a {
     @apply text-blue-500 font-semibold underline decoration-wavy
 }
