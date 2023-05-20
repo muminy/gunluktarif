@@ -9,8 +9,8 @@ export default function Tag({ title, slug }: ITagProps) {
   return (
     <Permalink
       className={cn(
-        "px-5 border py-2.5 rounded-xl flex space-x-2",
-        "hover-ring text-sm text-white fill-white"
+        "px-4 border py-2.5 rounded-2xl flex gap-x-1 bg-secondary",
+        "hover-ring text-sm text-white fill-white font-semibold"
       )}
       href={`/kategori/${slug}`}
     >

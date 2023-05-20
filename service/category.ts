@@ -1,14 +1,15 @@
+import { toCategory } from "#/helper/mapper/category"
 import { toPost } from "#/helper/mapper/post"
 import client from "#/lib/apollo"
 import { GET_CATEGORY, QUERY_CATEGORIES } from "#/query/category"
 import { CategoryType } from "#/types"
-import { WPPost } from "#/types/wordpress"
+import { WPCategory, WPPost } from "#/types/wordpress"
 import { ApolloQueryResult } from "@apollo/client"
 import { notFound } from "next/navigation"
 
 export type CategoryListResponse = {
   categories: {
-    nodes: CategoryType[]
+    nodes: WPCategory[]
   }
 }
 
@@ -25,8 +26,9 @@ export async function getCategories() {
     const response: ApolloQueryResult<CategoryListResponse> =
       await client.query({ query: QUERY_CATEGORIES })
 
-    return response.data.categories.nodes
+    return response.data.categories.nodes.map(toCategory)
   } catch (e) {
+    console.log("asasdasdasdasdasda")
     return []
   }
 }

@@ -1,12 +1,9 @@
-"use client"
-
-import { useSiteContext } from "#/context/Site"
+import { use } from "react"
 import Permalink from "../Permalink"
 import Repeater from "../Repeater"
+import categories from "#/constants/categories.json"
 
 export default function Navigations() {
-  const { categories } = useSiteContext()
-
   return (
     <Repeater
       as="ul"

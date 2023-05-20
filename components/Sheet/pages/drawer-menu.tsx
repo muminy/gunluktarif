@@ -1,12 +1,11 @@
-"use client"
-
 import Permalink from "#/components/Permalink"
 import Repeater from "#/components/Repeater"
-import { useSiteContext } from "#/context/Site"
+import { use } from "react"
 import SheetHeader from "../SheetHeader"
+import { categoryFetch } from "#/service/category"
 
 export default function DrawerMenu() {
-  const { categories } = useSiteContext()
+  const categories = use(categoryFetch)
   return (
     <div className="px-6 py-4">
       <SheetHeader />

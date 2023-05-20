@@ -29,11 +29,7 @@ export default function Repeater<T>({
       ) : (
         <Wrapper className={cn(className)}>
           {data.map((item, index) => (
-            <Fragment
-              key={`${index}_render_fragment${
-                Math.random() * 100000000
-              }`}
-            >
+            <Fragment key={`${index}_render_fragment`}>
               {render(item, index)}
             </Fragment>
           ))}

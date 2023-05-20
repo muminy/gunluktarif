@@ -3,7 +3,6 @@ import client from "#/lib/apollo"
 import { GET_POST_BY_SLUG, QUERY_POSTS } from "#/query/post"
 import { WPPost } from "#/types/wordpress"
 import { ApolloQueryResult } from "@apollo/client"
-import { notFound } from "next/navigation"
 
 export type PostResponse = {
   posts: {

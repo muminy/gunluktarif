@@ -1,0 +1,179 @@
+[
+  {
+    "id": 57,
+    "__typename": "Category",
+    "count": null,
+    "showmenu": false,
+    "name": "Akşam Yemeği",
+    "slug": "aksam-yemegi",
+    "image": {
+      "__typename": "MediaItem",
+      "sourceUrl": "https://gunluktarif.codejs.dev/wp-content/uploads/2023/01/dinner-scaled.jpg",
+      "title": "dinner"
+    }
+  },
+  {
+    "id": 1,
+    "__typename": "Category",
+    "count": 4,
+    "showmenu": false,
+    "name": "Börek",
+    "slug": "borek",
+    "image": {
+      "__typename": "MediaItem",
+      "sourceUrl": "https://gunluktarif.codejs.dev/wp-content/uploads/2023/01/Pastry-scaled.jpg",
+      "title": "Pastry"
+    }
+  },
+  {
+    "id": 40,
+    "__typename": "Category",
+    "count": 3,
+    "showmenu": false,
+    "name": "Çorba",
+    "slug": "corba",
+    "image": {
+      "__typename": "MediaItem",
+      "sourceUrl": "https://gunluktarif.codejs.dev/wp-content/uploads/2023/01/soup-scaled.jpg",
+      "title": "soup"
+    }
+  },
+  {
+    "id": 137,
+    "__typename": "Category",
+    "count": 1,
+    "showmenu": false,
+    "name": "Dondurmalı Tatlılar",
+    "slug": "dondurmali-tatlilar",
+    "image": {
+      "__typename": "MediaItem",
+      "sourceUrl": "https://gunluktarif.codejs.dev/wp-content/uploads/2023/02/ice-scaled.jpg",
+      "title": "ice"
+    }
+  },
+  {
+    "id": 119,
+    "__typename": "Category",
+    "count": 3,
+    "showmenu": false,
+    "name": "Hamur işi",
+    "slug": "hamur-isi",
+    "image": {
+      "__typename": "MediaItem",
+      "sourceUrl": "https://gunluktarif.codejs.dev/wp-content/uploads/2023/02/pastry-scaled.jpg",
+      "title": "pastry"
+    }
+  },
+  {
+    "id": 96,
+    "__typename": "Category",
+    "count": 8,
+    "showmenu": true,
+    "name": "Kek",
+    "slug": "kek",
+    "image": {
+      "__typename": "MediaItem",
+      "sourceUrl": "https://gunluktarif.codejs.dev/wp-content/uploads/2023/02/cake-scaled.webp",
+      "title": "cake"
+    }
+  },
+  {
+    "id": 85,
+    "__typename": "Category",
+    "count": 2,
+    "showmenu": true,
+    "name": "Kurabiye",
+    "slug": "kurabiye",
+    "image": {
+      "__typename": "MediaItem",
+      "sourceUrl": "https://gunluktarif.codejs.dev/wp-content/uploads/2023/01/cookies-scaled.webp",
+      "title": "cookies"
+    }
+  },
+  {
+    "id": 164,
+    "__typename": "Category",
+    "count": 1,
+    "showmenu": false,
+    "name": "Pasta",
+    "slug": "pasta"
+  },
+  {
+    "id": 154,
+    "__typename": "Category",
+    "count": 1,
+    "showmenu": false,
+    "name": "Pilav",
+    "slug": "pilav",
+    "image": {
+      "__typename": "MediaItem",
+      "sourceUrl": "https://gunluktarif.codejs.dev/wp-content/uploads/2023/02/rice-scaled.jpg",
+      "title": "rice"
+    }
+  },
+  {
+    "id": 65,
+    "__typename": "Category",
+    "count": 2,
+    "showmenu": false,
+    "name": "Poğaça",
+    "slug": "pogaca",
+    "image": {
+      "__typename": "MediaItem",
+      "sourceUrl": "https://gunluktarif.codejs.dev/wp-content/uploads/2023/01/pogaca.webp",
+      "title": "pogaca"
+    }
+  },
+  {
+    "id": 58,
+    "__typename": "Category",
+    "count": 3,
+    "showmenu": false,
+    "name": "Sağlıklı Yaşam",
+    "slug": "saglikli-yasam",
+    "image": {
+      "__typename": "MediaItem",
+      "sourceUrl": "https://gunluktarif.codejs.dev/wp-content/uploads/2023/01/HEALTHY-scaled.jpg",
+      "title": "HEALTHY"
+    }
+  },
+  {
+    "id": 39,
+    "__typename": "Category",
+    "count": 4,
+    "showmenu": false,
+    "name": "Salata ve Meze",
+    "slug": "salata-ve-meze",
+    "image": {
+      "__typename": "MediaItem",
+      "sourceUrl": "https://gunluktarif.codejs.dev/wp-content/uploads/2023/01/meze-scaled.jpg",
+      "title": "meze"
+    }
+  },
+  {
+    "id": 55,
+    "__typename": "Category",
+    "count": 3,
+    "showmenu": true,
+    "name": "Tatlı",
+    "slug": "tatli",
+    "image": {
+      "__typename": "MediaItem",
+      "sourceUrl": "https://gunluktarif.codejs.dev/wp-content/uploads/2023/01/sweet-scaled.jpg",
+      "title": "sweet"
+    }
+  },
+  {
+    "id": 142,
+    "__typename": "Category",
+    "count": 1,
+    "showmenu": true,
+    "name": "Zeytinyağlı",
+    "slug": "zeytinyagli",
+    "image": {
+      "__typename": "MediaItem",
+      "sourceUrl": "https://gunluktarif.codejs.dev/wp-content/uploads/2023/02/zeytinyagli.jpeg",
+      "title": "zeytinyaglı"
+    }
+  }
+]

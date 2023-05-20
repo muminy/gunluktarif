@@ -74,7 +74,6 @@ export default function Recipe({ ingredients, steps }: IRecipeProps) {
         </div>
         <div className="py-10 lg:pl-8">
           <Repeater
-            as="ul"
             data={ingredients}
             className="gap-y-3 flex flex-col"
             renderHeader={

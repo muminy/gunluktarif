@@ -16,10 +16,23 @@
     @apply text-4xl
 }
 
+.recipe :is(h3, h4) {
+    @apply text-2xl
+}
+
+
 .recipe ul {
     @apply list-disc pl-5 mb-10
 }
 
 .recipe ul li {
     @apply text-white text-lg
+}
+
+.recipe figure {
+    @apply mb-10
+}
+
+.recipe a {
+    @apply text-blue-500 font-semibold underline decoration-wavy
 }
