@@ -41,6 +41,11 @@ export async function getCategory(props: ICategoryVars) {
     await client.query({
       query: GET_CATEGORY,
       variables: { slug: props.slug },
+      context: {
+        fetchOptions: {
+          next: { revalidate: 10 },
+        },
+      },
     })
 
   if (!response.data.category) {

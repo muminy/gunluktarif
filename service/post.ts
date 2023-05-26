@@ -17,7 +17,14 @@ export type PostDetailResponse = {
 export async function getAllRecipient() {
   try {
     const response: ApolloQueryResult<PostResponse> =
-      await client.query({ query: QUERY_POSTS })
+      await client.query({
+        query: QUERY_POSTS,
+        context: {
+          fetchOptions: {
+            next: { revalidate: 10 },
+          },
+        },
+      })
     return response.data.posts.nodes.map(toPost)
   } catch (e) {
     return []
@@ -33,6 +40,11 @@ export async function getPostDetail(props: IPostDetailProps) {
       query: GET_POST_BY_SLUG,
       variables: {
         slug: props.slug,
+      },
+      context: {
+        fetchOptions: {
+          next: { revalidate: 10 },
+        },
       },
     })
 
