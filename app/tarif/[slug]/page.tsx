@@ -37,7 +37,6 @@ export async function generateMetadata({ params }: IRecipePageProps) {
   })
 }
 
-export const revalidate = 60
 export default async function Page({ params }: IRecipePageProps) {
   const post = await getPostDetail({ slug: params.slug })
 
@@ -73,3 +72,6 @@ export default async function Page({ params }: IRecipePageProps) {
     </article>
   )
 }
+
+export const fetchCache = "force-no-store"
+export const revalidate = 10

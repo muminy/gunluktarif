@@ -29,7 +29,8 @@ export async function generateMetadata({
   })
 }
 
-export const revalidate = 60
+export const fetchCache = "force-no-store"
+export const revalidate = 10
 export default async function CategoryPage({
   params,
 }: ICategoryPageProps) {

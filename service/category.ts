@@ -28,7 +28,6 @@ export async function getCategories() {
 
     return response.data.categories.nodes.map(toCategory)
   } catch (e) {
-    console.log("asasdasdasdasdasda")
     return []
   }
 }
@@ -41,11 +40,6 @@ export async function getCategory(props: ICategoryVars) {
     await client.query({
       query: GET_CATEGORY,
       variables: { slug: props.slug },
-      context: {
-        fetchOptions: {
-          next: { revalidate: 10 },
-        },
-      },
     })
 
   if (!response.data.category) {
